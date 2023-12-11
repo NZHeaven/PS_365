@@ -1,9 +1,10 @@
 <#  
 This PowerShell script is designed to synchronize files between a SharePoint document library and a local folder on a computer. 
-The function Sync-Files takes two parameters: $folderUrl, which represents the SharePoint folder URL, and $localFolderPath, 
+The function Sync-Library takes two parameters: $folderUrl, which represents the SharePoint folder URL, and $localFolderPath, 
 which is the local directory where the files will be synchronized. It will only synchronize files that are newer or do not exist locally.
 Remeber to change the $siteUrl, $rootFolderUrl and localFolderPath variables to match your environment.
 #>
+
 function Sync-Library($folderUrl, $localFolderPath) {
 
     $folder = Get-PnPFolder -Url $folderUrl -Includes Files,Folders
