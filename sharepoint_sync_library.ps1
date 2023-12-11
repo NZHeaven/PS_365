@@ -36,7 +36,7 @@ function Sync-Library($folderUrl, $localFolderPath) {
             New-Item -ItemType Directory -Path $subLocalFolderPath | Out-Null
         }
 
-        Download-Files -folderUrl $subFolderUrl -localFolderPath $subLocalFolderPath
+        Sync-Library -folderUrl $subFolderUrl -localFolderPath $subLocalFolderPath
     }
 }
 
